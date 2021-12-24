@@ -8,8 +8,17 @@
 import SwiftUI
 
 struct CepController: View {
+    
+    @State private var searchText = ""
+
     var body: some View {
-        Text("Cep")
+        
+        NavigationView {
+         
+            LazyVStack {
+            }
+            .navigationTitle("Cep")
+        }
     }
 }
 
