@@ -21,6 +21,7 @@
 		828DC7CA2770849300DA9433 /* ParcelsDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828DC7C92770849300DA9433 /* ParcelsDetailsController.swift */; };
 		82AA7CF627765F8000FCEE51 /* TextFieldBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA7CF527765F8000FCEE51 /* TextFieldBorder.swift */; };
 		82AA7CF82776689B00FCEE51 /* ButtonAppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA7CF72776689B00FCEE51 /* ButtonAppStyle.swift */; };
+		82AA7CFB27766DA800FCEE51 /* ParcelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA7CFA27766DA800FCEE51 /* ParcelViewModel.swift */; };
 		82D4358E276FC41100E5A45D /* ParcelsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D4358D276FC41100E5A45D /* ParcelsViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		828DC7C92770849300DA9433 /* ParcelsDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParcelsDetailsController.swift; sourceTree = "<group>"; };
 		82AA7CF527765F8000FCEE51 /* TextFieldBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldBorder.swift; sourceTree = "<group>"; };
 		82AA7CF72776689B00FCEE51 /* ButtonAppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAppStyle.swift; sourceTree = "<group>"; };
+		82AA7CFA27766DA800FCEE51 /* ParcelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParcelViewModel.swift; sourceTree = "<group>"; };
 		82D4358D276FC41100E5A45D /* ParcelsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParcelsViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,6 +161,7 @@
 		824E4D0A276E7645005C0865 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				82AA7CF927766D7C00FCEE51 /* ViewModel */,
 				824E4CF1276E74A5005C0865 /* Buscador.xcdatamodeld */,
 			);
 			path = CoreData;
@@ -212,6 +215,14 @@
 				82AA7CF527765F8000FCEE51 /* TextFieldBorder.swift */,
 			);
 			path = TextFieldIcon;
+			sourceTree = "<group>";
+		};
+		82AA7CF927766D7C00FCEE51 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				82AA7CFA27766DA800FCEE51 /* ParcelViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		82D4358C276FC3EE00E5A45D /* Cells */ = {
@@ -294,6 +305,7 @@
 			files = (
 				824E4D17276E7D4D005C0865 /* MenuController.swift in Sources */,
 				828DC7C827707E6300DA9433 /* ParcelsCreateController.swift in Sources */,
+				82AA7CFB27766DA800FCEE51 /* ParcelViewModel.swift in Sources */,
 				824E4CF3276E74A5005C0865 /* Buscador.xcdatamodeld in Sources */,
 				824E4D0E276E7C3F005C0865 /* CepController.swift in Sources */,
 				824E4D10276E7C72005C0865 /* ParcelsController.swift in Sources */,

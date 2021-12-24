@@ -12,6 +12,7 @@ struct ParcelsCreateController: View {
     @Binding var showSheet: Bool
     @State private var codigo: String = ""
     @State private var title: String = ""
+    @Environment(\.managedObjectContext) var viewContext
 
     var body: some View {
         
@@ -21,8 +22,9 @@ struct ParcelsCreateController: View {
             
                 VStack(alignment: .leading) {
                     
-                    TextFieldBorder(params: self.$title, hint: "Informe o titulo")
-                    TextFieldBorder(params: self.$codigo, hint: "Informe o codigo")
+                    TextFieldBorder(params: self.$title, hint: "* Informe o titulo")
+                    TextFieldBorder(params: self.$codigo, hint: "* Informe o codigo")
+                        .padding(.bottom, 4)
 
                     HStack {
                         Spacer()
@@ -43,7 +45,7 @@ struct ParcelsCreateController: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     
                     Button(action: {
-                        self.showSheet = false
+                        self.didClose()
                     }, label: {
                         Image(systemName: "multiply.circle.fill")
                     })
@@ -56,7 +58,11 @@ struct ParcelsCreateController: View {
 extension ParcelsCreateController {
     
     private func didCreateParcel() {
-        
+        self.didClose()
+    }
+    
+    private func didClose() {
+        self.showSheet = false
     }
 }
 

@@ -15,7 +15,7 @@ struct TextFieldBorder: View {
     var body: some View {
         
         TextField(self.hint, text: self.$params)
-        .font(.system(size: 18))
+        .font(.system(size: 20))
         .padding()
         .overlay(
             RoundedRectangle(cornerRadius: 8)
