@@ -5,55 +5,64 @@
 //  Created by Gustavo Cosme on 24/12/21.
 //
 
-import SwiftUI
 import CoreData
 
-class ParcelViewModel: ObservableObject {
+class ParcelViewModel {
     
-    @Published var hasSave: Bool = false
-    @Published var error: String = ""
-    var viewContext: NSManagedObjectContext?
     
-    public func save(title: String,
-              code: String) {
-        
-        guard let viewContext = self.viewContext else {
-            return
-        }
-        
-        let parcel = ModelParcel(context: viewContext)
-        parcel.title = title
-        parcel.code = code
-        
-        do {
-            try viewContext.save()
-            self.hasSave = true
-        } catch {
-            self.error = "Ops, problema ao salvar! Tente novamente! ;)"
-            print(error.localizedDescription)
-        }
-        self.error = ""
-        self.hasSave = false
-    }
-    
-    public func didDelete(_ parcelEntity: ModelParcel) {
-        guard let viewContext = self.viewContext else {
-            return
-        }
-        viewContext.delete(parcelEntity)
-        
-        do {
-            try viewContext.save()
-            self.hasSave = true
-        } catch {
-            self.error = "Ops, problema ao apagar! Tente novamente! ;)"
-            print(error.localizedDescription)
-        }
-    }
-    
-    public func getList() -> NSFetchRequest<ModelParcel> {
-        return NSFetchRequest<ModelParcel>(entityName: "ParcelEntity")
-    }
+    // MARK: - Properties
+
+    static private let ENTITY = "ParcelEntity"
+    static private var viewContext: NSManagedObjectContext = {
+        return NSManagedObjectContext.shared
+    }()
 }
 
-class ModelParcel: ParcelEntity { } /// CoreDate
+extension ParcelViewModel {
+
+
+    // MARK: - Action
+
+    public static func save(title: String, code: String) -> Bool {
+        let parcel = ParcelEntity(context: self.viewContext)
+        parcel.title = title
+        parcel.code = code
+        do {
+            try viewContext.save()
+            return true
+        } catch {
+            return false
+        }
+    }
+    
+    public static func delete(_ parcelEntity: ParcelEntity) -> Bool {
+        self.viewContext.delete(parcelEntity)
+        do {
+            try self.viewContext.save()
+            return true
+        } catch {
+            return false
+        }
+    }
+    
+    public static func deleteAll() -> Bool {
+        for parcelEntity in self.getList() {
+            self.viewContext.delete(parcelEntity)
+        }
+        do {
+            try self.viewContext.save()
+            return true
+        } catch {
+            return false
+        }
+    }
+    
+    public static func getList() -> [ParcelEntity] {
+        let fetchRequest: NSFetchRequest<ParcelEntity> = ParcelEntity.fetchRequest()
+        do {
+            return try self.viewContext.fetch(fetchRequest)
+        } catch {
+            return []
+        }
+    }
+}

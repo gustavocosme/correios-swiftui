@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8210E11327772A47003D7607 /* BuscadorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8210E11227772A47003D7607 /* BuscadorTests.swift */; };
+		8210E11C27772A8C003D7607 /* ParcelViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8210E11B27772A8C003D7607 /* ParcelViewModelTests.swift */; };
 		824E4CEC276E74A5005C0865 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824E4CEB276E74A5005C0865 /* AppDelegate.swift */; };
 		824E4CEE276E74A5005C0865 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824E4CED276E74A5005C0865 /* SceneDelegate.swift */; };
 		824E4CF3276E74A5005C0865 /* Buscador.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 824E4CF1276E74A5005C0865 /* Buscador.xcdatamodeld */; };
@@ -22,10 +24,28 @@
 		82AA7CF627765F8000FCEE51 /* TextFieldBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA7CF527765F8000FCEE51 /* TextFieldBorder.swift */; };
 		82AA7CF82776689B00FCEE51 /* ButtonAppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA7CF72776689B00FCEE51 /* ButtonAppStyle.swift */; };
 		82AA7CFB27766DA800FCEE51 /* ParcelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA7CFA27766DA800FCEE51 /* ParcelViewModel.swift */; };
+		82CABB7E2778C11A006520A3 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CABB7D2778C11A006520A3 /* Color+Extensions.swift */; };
+		82CABB802778E063006520A3 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CABB7F2778E063006520A3 /* Config.swift */; };
+		82CABB842778E20B006520A3 /* TextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CABB832778E20B006520A3 /* TextFieldModifier.swift */; };
+		82D362A727772465008CFA9A /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D362A627772465008CFA9A /* NSManagedObjectContext+Extensions.swift */; };
 		82D4358E276FC41100E5A45D /* ParcelsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D4358D276FC41100E5A45D /* ParcelsViewCell.swift */; };
+		82DB9CAE277797A500213E83 /* ToastUI in Frameworks */ = {isa = PBXBuildFile; productRef = 82DB9CAD277797A500213E83 /* ToastUI */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		8210E11427772A47003D7607 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 824E4CE0276E74A5005C0865 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 824E4CE7276E74A5005C0865;
+			remoteInfo = Buscador;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		8210E11027772A47003D7607 /* BuscadorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuscadorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8210E11227772A47003D7607 /* BuscadorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuscadorTests.swift; sourceTree = "<group>"; };
+		8210E11B27772A8C003D7607 /* ParcelViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParcelViewModelTests.swift; sourceTree = "<group>"; };
 		824E4CE8276E74A5005C0865 /* Buscador.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Buscador.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		824E4CEB276E74A5005C0865 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		824E4CED276E74A5005C0865 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,24 +63,46 @@
 		82AA7CF527765F8000FCEE51 /* TextFieldBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldBorder.swift; sourceTree = "<group>"; };
 		82AA7CF72776689B00FCEE51 /* ButtonAppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAppStyle.swift; sourceTree = "<group>"; };
 		82AA7CFA27766DA800FCEE51 /* ParcelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParcelViewModel.swift; sourceTree = "<group>"; };
+		82CABB7D2778C11A006520A3 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		82CABB7F2778E063006520A3 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		82CABB832778E20B006520A3 /* TextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModifier.swift; sourceTree = "<group>"; };
+		82D362A627772465008CFA9A /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
 		82D4358D276FC41100E5A45D /* ParcelsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParcelsViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		824E4CE5276E74A5005C0865 /* Frameworks */ = {
+		8210E10D27772A47003D7607 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		824E4CE5276E74A5005C0865 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82DB9CAE277797A500213E83 /* ToastUI in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8210E11127772A47003D7607 /* BuscadorTests */ = {
+			isa = PBXGroup;
+			children = (
+				8210E11227772A47003D7607 /* BuscadorTests.swift */,
+				8210E11B27772A8C003D7607 /* ParcelViewModelTests.swift */,
+			);
+			path = BuscadorTests;
+			sourceTree = "<group>";
+		};
 		824E4CDF276E74A5005C0865 = {
 			isa = PBXGroup;
 			children = (
 				824E4CEA276E74A5005C0865 /* Buscador */,
+				8210E11127772A47003D7607 /* BuscadorTests */,
 				824E4CE9276E74A5005C0865 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -69,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				824E4CE8276E74A5005C0865 /* Buscador.app */,
+				8210E11027772A47003D7607 /* BuscadorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,6 +119,7 @@
 		824E4CEA276E74A5005C0865 /* Buscador */ = {
 			isa = PBXGroup;
 			children = (
+				82CABB812778E1CF006520A3 /* Modifier */,
 				828DC7CB27708A2300DA9433 /* Styles */,
 				824E4D0C276E7AE4005C0865 /* Resouces */,
 				824E4D0B276E7AD6005C0865 /* App */,
@@ -129,6 +173,8 @@
 		824E4D05276E7516005C0865 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				82D362A627772465008CFA9A /* NSManagedObjectContext+Extensions.swift */,
+				82CABB7D2778C11A006520A3 /* Color+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -172,6 +218,7 @@
 			children = (
 				824E4CEB276E74A5005C0865 /* AppDelegate.swift */,
 				824E4CED276E74A5005C0865 /* SceneDelegate.swift */,
+				82CABB7F2778E063006520A3 /* Config.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -225,6 +272,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		82CABB812778E1CF006520A3 /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				82CABB832778E20B006520A3 /* TextFieldModifier.swift */,
+			);
+			path = Modifier;
+			sourceTree = "<group>";
+		};
 		82D4358C276FC3EE00E5A45D /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +291,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8210E10F27772A47003D7607 /* BuscadorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8210E11827772A47003D7607 /* Build configuration list for PBXNativeTarget "BuscadorTests" */;
+			buildPhases = (
+				8210E10C27772A47003D7607 /* Sources */,
+				8210E10D27772A47003D7607 /* Frameworks */,
+				8210E10E27772A47003D7607 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8210E11527772A47003D7607 /* PBXTargetDependency */,
+			);
+			name = BuscadorTests;
+			productName = BuscadorTests;
+			productReference = 8210E11027772A47003D7607 /* BuscadorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		824E4CE7276E74A5005C0865 /* Buscador */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 824E4CFF276E74A6005C0865 /* Build configuration list for PBXNativeTarget "Buscador" */;
@@ -249,6 +322,9 @@
 			dependencies = (
 			);
 			name = Buscador;
+			packageProductDependencies = (
+				82DB9CAD277797A500213E83 /* ToastUI */,
+			);
 			productName = Buscador;
 			productReference = 824E4CE8276E74A5005C0865 /* Buscador.app */;
 			productType = "com.apple.product-type.application";
@@ -259,9 +335,13 @@
 		824E4CE0276E74A5005C0865 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1250;
+				LastSwiftUpdateCheck = 1310;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					8210E10F27772A47003D7607 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 824E4CE7276E74A5005C0865;
+					};
 					824E4CE7276E74A5005C0865 = {
 						CreatedOnToolsVersion = 12.5;
 					};
@@ -276,16 +356,27 @@
 				Base,
 			);
 			mainGroup = 824E4CDF276E74A5005C0865;
+			packageReferences = (
+				82DB9CAC277797A400213E83 /* XCRemoteSwiftPackageReference "ToastUI" */,
+			);
 			productRefGroup = 824E4CE9276E74A5005C0865 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				824E4CE7276E74A5005C0865 /* Buscador */,
+				8210E10F27772A47003D7607 /* BuscadorTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8210E10E27772A47003D7607 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		824E4CE6276E74A5005C0865 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -299,27 +390,48 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8210E10C27772A47003D7607 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8210E11327772A47003D7607 /* BuscadorTests.swift in Sources */,
+				8210E11C27772A8C003D7607 /* ParcelViewModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		824E4CE4276E74A5005C0865 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				824E4D17276E7D4D005C0865 /* MenuController.swift in Sources */,
+				82D362A727772465008CFA9A /* NSManagedObjectContext+Extensions.swift in Sources */,
 				828DC7C827707E6300DA9433 /* ParcelsCreateController.swift in Sources */,
 				82AA7CFB27766DA800FCEE51 /* ParcelViewModel.swift in Sources */,
 				824E4CF3276E74A5005C0865 /* Buscador.xcdatamodeld in Sources */,
+				82CABB7E2778C11A006520A3 /* Color+Extensions.swift in Sources */,
 				824E4D0E276E7C3F005C0865 /* CepController.swift in Sources */,
+				82CABB842778E20B006520A3 /* TextFieldModifier.swift in Sources */,
 				824E4D10276E7C72005C0865 /* ParcelsController.swift in Sources */,
 				824E4CEC276E74A5005C0865 /* AppDelegate.swift in Sources */,
 				824E4D14276E7CBA005C0865 /* ConfigurationController.swift in Sources */,
 				82D4358E276FC41100E5A45D /* ParcelsViewCell.swift in Sources */,
 				82AA7CF627765F8000FCEE51 /* TextFieldBorder.swift in Sources */,
 				82AA7CF82776689B00FCEE51 /* ButtonAppStyle.swift in Sources */,
+				82CABB802778E063006520A3 /* Config.swift in Sources */,
 				824E4CEE276E74A5005C0865 /* SceneDelegate.swift in Sources */,
 				828DC7CA2770849300DA9433 /* ParcelsDetailsController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8210E11527772A47003D7607 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 824E4CE7276E74A5005C0865 /* Buscador */;
+			targetProxy = 8210E11427772A47003D7607 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		824E4CF9276E74A6005C0865 /* LaunchScreen.storyboard */ = {
@@ -333,6 +445,56 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8210E11627772A47003D7607 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7T3V97F3GL;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gustavocosme.BuscadorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Buscador.app/Buscador";
+			};
+			name = Debug;
+		};
+		8210E11727772A47003D7607 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7T3V97F3GL;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gustavocosme.BuscadorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Buscador.app/Buscador";
+			};
+			name = Release;
+		};
 		824E4CFD276E74A6005C0865 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -494,6 +656,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8210E11827772A47003D7607 /* Build configuration list for PBXNativeTarget "BuscadorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8210E11627772A47003D7607 /* Debug */,
+				8210E11727772A47003D7607 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		824E4CE3276E74A5005C0865 /* Build configuration list for PBXProject "Buscador" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -513,6 +684,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		82DB9CAC277797A400213E83 /* XCRemoteSwiftPackageReference "ToastUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/quanshousio/ToastUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		82DB9CAD277797A500213E83 /* ToastUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 82DB9CAC277797A400213E83 /* XCRemoteSwiftPackageReference "ToastUI" */;
+			productName = ToastUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		824E4CF1276E74A5005C0865 /* Buscador.xcdatamodeld */ = {
