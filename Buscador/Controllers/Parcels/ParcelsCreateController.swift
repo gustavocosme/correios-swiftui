@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import ToastUI
 
 struct ParcelsCreateController: View {
     
@@ -16,8 +15,9 @@ struct ParcelsCreateController: View {
     @Binding var showSheet: Bool
     @State var code: String = ""
     @State var title: String = ""
-    @State var presentingToast: Bool = false
     @State var disableButton: Bool = true
+    @State var codeStatus: TextFieldStatus = .normal
+    @State var codeMessage: String = ""
     
     
     // MARK: - Controller
@@ -28,15 +28,6 @@ struct ParcelsCreateController: View {
             
             ParcelsCreateView(context: self)
 
-
-            // MARK: - Navigation
-
-            .toast(isPresented: $presentingToast, dismissAfter: 2.0) {
-            } content: {
-                ToastView("Ops, Houve uma falha! Tente novamente")
-                    .toastViewStyle(ErrorToastViewStyle())
-            }
-            
             
             // MARK: - Toolbar
 
@@ -71,6 +62,8 @@ struct ParcelsCreateView: View {
                 TextFieldBorder(params: self.context.$title,
                                 title: "Titulo",
                                 hint: "* Informe o titulo",
+                                status: .constant(.normal),
+                                message: .constant(""),
                                 type: .namePhonePad,
                                 onChange: self.onChangeTitle)
                     .padding(.bottom, 8)
@@ -78,10 +71,14 @@ struct ParcelsCreateView: View {
                 TextFieldBorder(params: self.context.$code,
                                 title: "Codigo",
                                 hint: "* AA123456789BR",
+                                status: self.context.$codeStatus,
+                                message: self.context.$codeMessage,
+                                limit: 13,
                                 onChange: self.onChangeCode)
                     .padding(.bottom, 18)
                 
                 HStack {
+                    
                     Spacer()
                     Button(action: {
                         self.didCreateParcel()
@@ -105,8 +102,6 @@ extension ParcelsCreateView {
     private func didCreateParcel() {
         if ParcelViewModel.save(title: self.context.title, code: self.context.code) {
             self.context.showSheet = false
-        } else{
-            self.context.presentingToast = true
         }
     }
     
@@ -117,7 +112,20 @@ extension ParcelsCreateView {
     private func onChangeCode() {
         self.context.code = self.context.code.uppercased()
         self.hasValidation()
-        
+        let hasCode = NSRegularExpression.match(text: self.context.code, regex: .parcel)
+        let codeCount = self.context.code.count
+        if codeCount == 13 {
+            if hasCode {
+                self.context.codeStatus = .sucess
+                self.context.codeMessage = "OK ;)"
+            } else {
+                self.context.codeStatus = .error
+                self.context.codeMessage = "Código inválido! :("
+            }
+        } else {
+            self.context.codeStatus = .normal
+            self.context.codeMessage = ""
+        }
     }
     
     private func hasValidation() {
@@ -130,7 +138,7 @@ extension ParcelsCreateView {
 }
 
 
-// MARK: - Debug
+// MARK: - Previews
 
 #if DEBUG
 struct ParcelsCreateController_Previews: PreviewProvider {
