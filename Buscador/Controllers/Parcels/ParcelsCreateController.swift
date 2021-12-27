@@ -13,6 +13,7 @@ struct ParcelsCreateController: View {
     // MARK: - Properties
     
     @Binding var showSheet: Bool
+    @Binding var parcels: [ParcelEntity]
     @State var code: String = ""
     @State var title: String = ""
     @State var disableButton: Bool = true
@@ -101,6 +102,7 @@ extension ParcelsCreateView {
     
     private func didCreateParcel() {
         if ParcelViewModel.save(title: self.context.title, code: self.context.code) {
+            self.context.parcels = ParcelViewModel.getList()
             self.context.showSheet = false
         }
     }
@@ -144,7 +146,7 @@ extension ParcelsCreateView {
 #if DEBUG
 struct ParcelsCreateController_Previews: PreviewProvider {
     static var previews: some View {
-        ParcelsCreateController(showSheet: .constant(true))
+        ParcelsCreateController(showSheet: .constant(true), parcels: .constant([]))
             .preferredColorScheme(CONFIG.Debug.style)
     }
 }

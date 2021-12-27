@@ -8,16 +8,18 @@
 import SwiftUI
 
 struct ParcelsViewCell: View {
+    
+    var parcel: ParcelEntity
    
     var body: some View {
         
         HStack {
             
             VStack(alignment: .leading) {
-                Text("Tenis final de ano")
+                Text(parcel.title ?? "")
                     .font(.title)
                     .padding(.bottom, 1)
-                Text("97928374982749872394")
+                Text(parcel.code ?? "")
                     .font(.body)
                     .padding(.leading, 4)
             }
@@ -31,8 +33,7 @@ struct ParcelsViewCell: View {
 struct ParcelsCell_Previews: PreviewProvider {
     
     static var previews: some View {
-    
-        ParcelsViewCell()
+        ParcelsViewCell(parcel: ParcelEntity())
     }
 }
 #endif
