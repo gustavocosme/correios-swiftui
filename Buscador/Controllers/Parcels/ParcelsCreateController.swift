@@ -129,7 +129,8 @@ extension ParcelsCreateView {
     }
     
     private func hasValidation() {
-        if self.context.code == "" || self.context.title == "" {
+        let hasCode = NSRegularExpression.match(text: self.context.code, regex: .parcel)
+        if self.context.code == "" || self.context.title == "" || !hasCode {
             self.context.disableButton = true
         } else {
             self.context.disableButton = false
