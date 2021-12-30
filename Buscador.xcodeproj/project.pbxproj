@@ -23,6 +23,9 @@
 		8295A011277CE103008D16E5 /* EnvironmentValues+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8295A010277CE103008D16E5 /* EnvironmentValues+Extensions.swift */; };
 		82A7B019277E3D6600D40682 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 82A7B018277E3D6600D40682 /* Alamofire */; };
 		82A7B01C277E41AB00D40682 /* EventEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A7B01B277E41AB00D40682 /* EventEntity.swift */; };
+		82A7B01F277E5DEE00D40682 /* ParcelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A7B01E277E5DEE00D40682 /* ParcelService.swift */; };
+		82A7B021277E605200D40682 /* NetworkErrorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A7B020277E605200D40682 /* NetworkErrorEntity.swift */; };
+		82A7B023277E607700D40682 /* BackendErrorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A7B022277E607700D40682 /* BackendErrorEntity.swift */; };
 		82AA7CF627765F8000FCEE51 /* TextFieldBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA7CF527765F8000FCEE51 /* TextFieldBorder.swift */; };
 		82AA7CF82776689B00FCEE51 /* ButtonAppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA7CF72776689B00FCEE51 /* ButtonAppStyle.swift */; };
 		82AA7CFB27766DA800FCEE51 /* ParcelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA7CFA27766DA800FCEE51 /* ParcelViewModel.swift */; };
@@ -64,6 +67,9 @@
 		828DC7C92770849300DA9433 /* ParcelsDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParcelsDetailsController.swift; sourceTree = "<group>"; };
 		8295A010277CE103008D16E5 /* EnvironmentValues+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+Extensions.swift"; sourceTree = "<group>"; };
 		82A7B01B277E41AB00D40682 /* EventEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEntity.swift; sourceTree = "<group>"; };
+		82A7B01E277E5DEE00D40682 /* ParcelService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParcelService.swift; sourceTree = "<group>"; };
+		82A7B020277E605200D40682 /* NetworkErrorEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorEntity.swift; sourceTree = "<group>"; };
+		82A7B022277E607700D40682 /* BackendErrorEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendErrorEntity.swift; sourceTree = "<group>"; };
 		82AA7CF527765F8000FCEE51 /* TextFieldBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldBorder.swift; sourceTree = "<group>"; };
 		82AA7CF72776689B00FCEE51 /* ButtonAppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAppStyle.swift; sourceTree = "<group>"; };
 		82AA7CFA27766DA800FCEE51 /* ParcelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParcelViewModel.swift; sourceTree = "<group>"; };
@@ -269,6 +275,8 @@
 			isa = PBXGroup;
 			children = (
 				82A7B01B277E41AB00D40682 /* EventEntity.swift */,
+				82A7B020277E605200D40682 /* NetworkErrorEntity.swift */,
+				82A7B022277E607700D40682 /* BackendErrorEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -276,6 +284,7 @@
 		82A7B01D277E4E6300D40682 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				82A7B01E277E5DEE00D40682 /* ParcelService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -444,14 +453,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82A7B01F277E5DEE00D40682 /* ParcelService.swift in Sources */,
 				824E4D17276E7D4D005C0865 /* MenuController.swift in Sources */,
 				82D362A727772465008CFA9A /* NSManagedObjectContext+Extensions.swift in Sources */,
 				828DC7C827707E6300DA9433 /* ParcelsCreateController.swift in Sources */,
+				82A7B023277E607700D40682 /* BackendErrorEntity.swift in Sources */,
 				82AA7CFB27766DA800FCEE51 /* ParcelViewModel.swift in Sources */,
 				824E4CF3276E74A5005C0865 /* Buscador.xcdatamodeld in Sources */,
 				82CABB7E2778C11A006520A3 /* Color+Extensions.swift in Sources */,
 				824E4D0E276E7C3F005C0865 /* CepController.swift in Sources */,
 				82CABB842778E20B006520A3 /* TextFieldModifier.swift in Sources */,
+				82A7B021277E605200D40682 /* NetworkErrorEntity.swift in Sources */,
 				824E4D10276E7C72005C0865 /* ParcelsController.swift in Sources */,
 				82CABB8B2778EE1F006520A3 /* NSRegularExpression+Extensions.swift in Sources */,
 				824E4CEC276E74A5005C0865 /* AppDelegate.swift in Sources */,
