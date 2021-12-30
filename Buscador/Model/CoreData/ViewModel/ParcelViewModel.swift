@@ -6,6 +6,7 @@
 //
 
 import CoreData
+import SwiftUI
 
 class ParcelViewModel {
     
@@ -59,6 +60,8 @@ extension ParcelViewModel {
     
     public static func getList() -> [ParcelEntity] {
         let fetchRequest: NSFetchRequest<ParcelEntity> = ParcelEntity.fetchRequest()
+        let sort = NSSortDescriptor(key: "title", ascending: false)
+        fetchRequest.sortDescriptors = [sort]
         do {
             return try self.viewContext.fetch(fetchRequest)
         } catch {

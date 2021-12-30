@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,9 @@
 		824E4D17276E7D4D005C0865 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824E4D16276E7D4D005C0865 /* MenuController.swift */; };
 		828DC7C827707E6300DA9433 /* ParcelsCreateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828DC7C727707E6300DA9433 /* ParcelsCreateController.swift */; };
 		828DC7CA2770849300DA9433 /* ParcelsDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828DC7C92770849300DA9433 /* ParcelsDetailsController.swift */; };
+		8295A011277CE103008D16E5 /* EnvironmentValues+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8295A010277CE103008D16E5 /* EnvironmentValues+Extensions.swift */; };
+		82A7B019277E3D6600D40682 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 82A7B018277E3D6600D40682 /* Alamofire */; };
+		82A7B01C277E41AB00D40682 /* EventEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A7B01B277E41AB00D40682 /* EventEntity.swift */; };
 		82AA7CF627765F8000FCEE51 /* TextFieldBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA7CF527765F8000FCEE51 /* TextFieldBorder.swift */; };
 		82AA7CF82776689B00FCEE51 /* ButtonAppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA7CF72776689B00FCEE51 /* ButtonAppStyle.swift */; };
 		82AA7CFB27766DA800FCEE51 /* ParcelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA7CFA27766DA800FCEE51 /* ParcelViewModel.swift */; };
@@ -59,6 +62,8 @@
 		824E4D16276E7D4D005C0865 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		828DC7C727707E6300DA9433 /* ParcelsCreateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParcelsCreateController.swift; sourceTree = "<group>"; };
 		828DC7C92770849300DA9433 /* ParcelsDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParcelsDetailsController.swift; sourceTree = "<group>"; };
+		8295A010277CE103008D16E5 /* EnvironmentValues+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+Extensions.swift"; sourceTree = "<group>"; };
+		82A7B01B277E41AB00D40682 /* EventEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEntity.swift; sourceTree = "<group>"; };
 		82AA7CF527765F8000FCEE51 /* TextFieldBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldBorder.swift; sourceTree = "<group>"; };
 		82AA7CF72776689B00FCEE51 /* ButtonAppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAppStyle.swift; sourceTree = "<group>"; };
 		82AA7CFA27766DA800FCEE51 /* ParcelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParcelViewModel.swift; sourceTree = "<group>"; };
@@ -83,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82A7B019277E3D6600D40682 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,8 +149,8 @@
 		824E4D02276E74E5005C0865 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				82A7B016277E3D3600D40682 /* Network */,
 				824E4D0A276E7645005C0865 /* CoreData */,
-				824E4D08276E7548005C0865 /* Data */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -175,6 +181,7 @@
 				82D362A627772465008CFA9A /* NSManagedObjectContext+Extensions.swift */,
 				82CABB7D2778C11A006520A3 /* Color+Extensions.swift */,
 				82CABB8A2778EE1F006520A3 /* NSRegularExpression+Extensions.swift */,
+				8295A010277CE103008D16E5 /* EnvironmentValues+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -195,13 +202,6 @@
 				828DC7C92770849300DA9433 /* ParcelsDetailsController.swift */,
 			);
 			path = Parcels;
-			sourceTree = "<group>";
-		};
-		824E4D08276E7548005C0865 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Data;
 			sourceTree = "<group>";
 		};
 		824E4D0A276E7645005C0865 /* CoreData */ = {
@@ -254,6 +254,22 @@
 				82AA7CF72776689B00FCEE51 /* ButtonAppStyle.swift */,
 			);
 			path = Styles;
+			sourceTree = "<group>";
+		};
+		82A7B016277E3D3600D40682 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				82A7B01A277E419800D40682 /* Entity */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		82A7B01A277E419800D40682 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				82A7B01B277E41AB00D40682 /* EventEntity.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		82AA7CF927766D7C00FCEE51 /* ViewModel */ = {
@@ -340,6 +356,7 @@
 			);
 			name = Buscador;
 			packageProductDependencies = (
+				82A7B018277E3D6600D40682 /* Alamofire */,
 			);
 			productName = Buscador;
 			productReference = 824E4CE8276E74A5005C0865 /* Buscador.app */;
@@ -373,6 +390,7 @@
 			);
 			mainGroup = 824E4CDF276E74A5005C0865;
 			packageReferences = (
+				82A7B017277E3D6600D40682 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 824E4CE9276E74A5005C0865 /* Products */;
 			projectDirPath = "";
@@ -429,11 +447,13 @@
 				824E4D10276E7C72005C0865 /* ParcelsController.swift in Sources */,
 				82CABB8B2778EE1F006520A3 /* NSRegularExpression+Extensions.swift in Sources */,
 				824E4CEC276E74A5005C0865 /* AppDelegate.swift in Sources */,
+				82A7B01C277E41AB00D40682 /* EventEntity.swift in Sources */,
 				824E4D14276E7CBA005C0865 /* ConfigurationController.swift in Sources */,
 				82D4358E276FC41100E5A45D /* ParcelsViewCell.swift in Sources */,
 				82AA7CF627765F8000FCEE51 /* TextFieldBorder.swift in Sources */,
 				82AA7CF82776689B00FCEE51 /* ButtonAppStyle.swift in Sources */,
 				82CABB802778E063006520A3 /* Config.swift in Sources */,
+				8295A011277CE103008D16E5 /* EnvironmentValues+Extensions.swift in Sources */,
 				824E4CEE276E74A5005C0865 /* SceneDelegate.swift in Sources */,
 				828DC7CA2770849300DA9433 /* ParcelsDetailsController.swift in Sources */,
 			);
@@ -466,9 +486,9 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7T3V97F3GL;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -479,6 +499,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gustavocosme.BuscadorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -491,9 +513,9 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7T3V97F3GL;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -504,6 +526,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gustavocosme.BuscadorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -632,9 +656,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_ASSET_PATHS = "\"Buscador/Preview Content\"";
-				DEVELOPMENT_TEAM = 7T3V97F3GL;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Buscador/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -643,6 +668,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gustavocosme.Buscador;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -653,9 +679,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_ASSET_PATHS = "\"Buscador/Preview Content\"";
-				DEVELOPMENT_TEAM = 7T3V97F3GL;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Buscador/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -664,6 +691,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gustavocosme.Buscador;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -700,6 +728,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		82A7B017277E3D6600D40682 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		82A7B018277E3D6600D40682 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 82A7B017277E3D6600D40682 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		824E4CF1276E74A5005C0865 /* Buscador.xcdatamodeld */ = {

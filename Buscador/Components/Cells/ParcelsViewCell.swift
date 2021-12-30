@@ -20,8 +20,7 @@ struct ParcelsViewCell: View {
                     .font(.title)
                     .padding(.bottom, 1)
                 Text(parcel.code ?? "")
-                    .font(.body)
-                    .padding(.leading, 4)
+                    .font(.headline)
             }
             Spacer()
         }

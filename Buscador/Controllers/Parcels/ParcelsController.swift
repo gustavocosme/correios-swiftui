@@ -16,7 +16,7 @@ struct ParcelsController: View {
         
         NavigationView {
          
-            ParcelsContainer(context: self)
+            self.getView()
             .navigationTitle("Encomendas")
             .toolbar {
                 
@@ -38,6 +38,14 @@ struct ParcelsController: View {
         .popover(isPresented: $isShowCreate) {
             ParcelsCreateController(showSheet: self.$isShowCreate, parcels: self.$parcels)
         }
+    }
+    
+    private func getView() -> AnyView {
+        if !self.parcels.isEmpty {
+            return AnyView(ParcelsContainer(context: self))
+
+        }
+        return AnyView(Text("Não há encomendas"))
     }
 }
 
