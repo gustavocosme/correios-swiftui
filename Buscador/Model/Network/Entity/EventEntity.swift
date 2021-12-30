@@ -30,9 +30,7 @@ struct EventItemEntity: Identifiable, Codable {
     var habilitaCrowdshipping: Bool?
     var eventos: [EventEventsEntity]?
     var tipoPostal: EventTypePostalEntity?
-    var unidade: EventUnitEntity?
 }
-
 
 struct EventUnitEntity: Codable {
     var endereco: EventUnitAdressEntity?
@@ -57,4 +55,12 @@ struct EventEventsEntity: Identifiable, Codable {
     var dtHrCriado: String?
     var tipo: String?
     var urlIcone: String?
+    var comentario: String?
+    var unidade: EventUnitEntity?
+    var unidadeDestino: EventUnitEntity?
+    var destinatario: EventDestinationEntity?
+}
+
+struct EventDestinationEntity: Codable {
+    var cep: String?
 }

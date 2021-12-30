@@ -259,6 +259,7 @@
 		82A7B016277E3D3600D40682 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				82A7B01D277E4E6300D40682 /* Service */,
 				82A7B01A277E419800D40682 /* Entity */,
 			);
 			path = Network;
@@ -270,6 +271,13 @@
 				82A7B01B277E41AB00D40682 /* EventEntity.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		82A7B01D277E4E6300D40682 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		82AA7CF927766D7C00FCEE51 /* ViewModel */ = {
