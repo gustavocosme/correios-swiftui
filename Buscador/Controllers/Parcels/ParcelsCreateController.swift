@@ -19,7 +19,8 @@ struct ParcelsCreateController: View {
     @State var disableButton: Bool = true
     @State var codeStatus: TextFieldStatus = .normal
     @State var codeMessage: String = ""
-    
+    @ObservedObject var viewModel = ParcelViewModel()
+
     
     // MARK: - Controller
 
@@ -87,22 +88,27 @@ struct ParcelsCreateView: View {
                         Text("Cadastrar")
                     })
                         .buttonStyle(ButtonAppStyle())
-                        .disabled(self.context.disableButton)
-                        .opacity(self.context.disableButton ? 0.5 : 1.0)
+                        .disabled(self.getButtonIsDisable())
+                        .opacity(self.getButtonIsDisable() ? 0.5 : 1.0)
                 }
             }
             .padding()
         }
     }
+    
+    private func getButtonIsDisable() -> Bool {
+        return (self.context.viewModel.parcel == nil) ? true : false
+    }
 }
+
 
 // MARK: - Actions
 
-extension ParcelsCreateView {
+extension ParcelsCreateView: ParcelViewModelDelegate {
     
     private func didCreateParcel() {
-        if ParcelViewModel.save(title: self.context.title, code: self.context.code) {
-            self.context.parcels = ParcelViewModel.getList()
+        if ParcelCoreDataViewModel.save(title: self.context.title, code: self.context.code) {
+            self.context.parcels = ParcelCoreDataViewModel.getList()
             self.context.showSheet = false
         }
     }
@@ -118,15 +124,15 @@ extension ParcelsCreateView {
         let codeCount = self.context.code.count
         if codeCount == 13 {
             if hasCode {
-                self.context.codeStatus = .sucess
-                self.context.codeMessage = "OK ;)"
+                self.context.codeMessage = "Validando..."
+                self.context.viewModel.getParcel(code: self.context.code, delegate: self)
             } else {
-                self.context.codeStatus = .error
-                self.context.codeMessage = "Código inválido! :("
+                self.didStatusError()
             }
         } else {
             self.context.codeStatus = .normal
             self.context.codeMessage = ""
+            self.context.viewModel.reset()
         }
     }
     
@@ -136,6 +142,21 @@ extension ParcelsCreateView {
             self.context.disableButton = true
         } else {
             self.context.disableButton = false
+        }
+    }
+    
+    private func didStatusError() {
+        self.context.codeStatus = .error
+        self.context.codeMessage = "Código inválido! :("
+    }
+    
+    func didCompletion(_ parcel: EventEntity?) {
+       
+        if parcel != nil {
+            self.context.codeStatus = .sucess
+            self.context.codeMessage = "Ok ;)"
+        } else {
+            self.didStatusError()
         }
     }
 }

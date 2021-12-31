@@ -10,7 +10,7 @@ import SwiftUI
 struct ParcelsController: View {
     
     @State private var isShowCreate = false
-    @State var parcels: [ParcelEntity] = ParcelViewModel.getList()
+    @State var parcels: [ParcelEntity] = ParcelCoreDataViewModel.getList()
 
     var body: some View {
         
@@ -68,7 +68,7 @@ private struct ParcelsContainer: View {
     private func didDelete(at offsets: IndexSet) {
         for i in offsets {
             let parcel = self.context.parcels[i]
-            let isDelete = ParcelViewModel.delete(parcel)
+            let isDelete = ParcelCoreDataViewModel.delete(parcel)
             if isDelete {
                 context.parcels.remove(atOffsets: offsets)
             }

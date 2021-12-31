@@ -8,7 +8,7 @@
 import Foundation
 
 struct EventEntity: Identifiable, Codable {
-    var id: Int
+    let id = UUID()
     var objetos: [EventItemEntity]?
     var quantidade: Int?
     var resultado: String?
@@ -17,7 +17,7 @@ struct EventEntity: Identifiable, Codable {
 }
 
 struct EventItemEntity: Identifiable, Codable {
-    var id: Int
+    let id = UUID()
     var codObjeto: String?
     var dtPrevista: String?
     var modalidade: String?
@@ -28,6 +28,7 @@ struct EventItemEntity: Identifiable, Codable {
     var possuiLocker: Bool?
     var habilitaLocker: Bool?
     var habilitaCrowdshipping: Bool?
+    var mensagem: String?
     var eventos: [EventEventsEntity]?
     var tipoPostal: EventTypePostalEntity?
 }
@@ -49,7 +50,7 @@ struct EventTypePostalEntity: Codable {
 }
 
 struct EventEventsEntity: Identifiable, Codable {
-    var id: Int
+    let id = UUID()
     var codigo: String?
     var descricao: String?
     var dtHrCriado: String?

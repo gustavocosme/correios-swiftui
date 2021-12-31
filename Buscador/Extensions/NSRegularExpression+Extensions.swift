@@ -10,7 +10,7 @@ import SwiftUI
 extension NSRegularExpression {
     
     public enum Regex: String {
-        case parcel = "^[A-Z]{2}[1-9]{9}[A-Z]{2}$"
+        case parcel = "^[A-Z]{2}[0-9]{9}[A-Z]{2}$"
     }
     
     public static func match(text: String, regex: Regex) -> Bool {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8203AB2C277F07FC00F9802F /* ParcelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8203AB2B277F07FC00F9802F /* ParcelViewModel.swift */; };
 		8210E11C27772A8C003D7607 /* ParcelViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8210E11B27772A8C003D7607 /* ParcelViewModelTests.swift */; };
 		824E4CEC276E74A5005C0865 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824E4CEB276E74A5005C0865 /* AppDelegate.swift */; };
 		824E4CEE276E74A5005C0865 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824E4CED276E74A5005C0865 /* SceneDelegate.swift */; };
@@ -28,7 +29,7 @@
 		82A7B023277E607700D40682 /* BackendErrorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A7B022277E607700D40682 /* BackendErrorEntity.swift */; };
 		82AA7CF627765F8000FCEE51 /* TextFieldBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA7CF527765F8000FCEE51 /* TextFieldBorder.swift */; };
 		82AA7CF82776689B00FCEE51 /* ButtonAppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA7CF72776689B00FCEE51 /* ButtonAppStyle.swift */; };
-		82AA7CFB27766DA800FCEE51 /* ParcelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA7CFA27766DA800FCEE51 /* ParcelViewModel.swift */; };
+		82AA7CFB27766DA800FCEE51 /* ParcelCoreDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA7CFA27766DA800FCEE51 /* ParcelCoreDataViewModel.swift */; };
 		82CABB7E2778C11A006520A3 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CABB7D2778C11A006520A3 /* Color+Extensions.swift */; };
 		82CABB802778E063006520A3 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CABB7F2778E063006520A3 /* Config.swift */; };
 		82CABB842778E20B006520A3 /* TextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CABB832778E20B006520A3 /* TextFieldModifier.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8203AB2B277F07FC00F9802F /* ParcelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParcelViewModel.swift; sourceTree = "<group>"; };
 		8210E11027772A47003D7607 /* BuscadorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuscadorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8210E11B27772A8C003D7607 /* ParcelViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParcelViewModelTests.swift; sourceTree = "<group>"; };
 		824E4CE8276E74A5005C0865 /* Buscador.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Buscador.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,7 +74,7 @@
 		82A7B022277E607700D40682 /* BackendErrorEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendErrorEntity.swift; sourceTree = "<group>"; };
 		82AA7CF527765F8000FCEE51 /* TextFieldBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldBorder.swift; sourceTree = "<group>"; };
 		82AA7CF72776689B00FCEE51 /* ButtonAppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAppStyle.swift; sourceTree = "<group>"; };
-		82AA7CFA27766DA800FCEE51 /* ParcelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParcelViewModel.swift; sourceTree = "<group>"; };
+		82AA7CFA27766DA800FCEE51 /* ParcelCoreDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParcelCoreDataViewModel.swift; sourceTree = "<group>"; };
 		82CABB7D2778C11A006520A3 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		82CABB7F2778E063006520A3 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		82CABB832778E20B006520A3 /* TextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModifier.swift; sourceTree = "<group>"; };
@@ -101,6 +103,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8203AB2A277F074D00F9802F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8203AB2B277F07FC00F9802F /* ParcelViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		8210E11127772A47003D7607 /* BuscadorTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,6 +275,7 @@
 		82A7B016277E3D3600D40682 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				8203AB2A277F074D00F9802F /* ViewModel */,
 				82A7B01D277E4E6300D40682 /* Service */,
 				82A7B01A277E419800D40682 /* Entity */,
 			);
@@ -292,7 +303,7 @@
 		82AA7CF927766D7C00FCEE51 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				82AA7CFA27766DA800FCEE51 /* ParcelViewModel.swift */,
+				82AA7CFA27766DA800FCEE51 /* ParcelCoreDataViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -456,9 +467,10 @@
 				82A7B01F277E5DEE00D40682 /* ParcelService.swift in Sources */,
 				824E4D17276E7D4D005C0865 /* MenuController.swift in Sources */,
 				82D362A727772465008CFA9A /* NSManagedObjectContext+Extensions.swift in Sources */,
+				8203AB2C277F07FC00F9802F /* ParcelViewModel.swift in Sources */,
 				828DC7C827707E6300DA9433 /* ParcelsCreateController.swift in Sources */,
 				82A7B023277E607700D40682 /* BackendErrorEntity.swift in Sources */,
-				82AA7CFB27766DA800FCEE51 /* ParcelViewModel.swift in Sources */,
+				82AA7CFB27766DA800FCEE51 /* ParcelCoreDataViewModel.swift in Sources */,
 				824E4CF3276E74A5005C0865 /* Buscador.xcdatamodeld in Sources */,
 				82CABB7E2778C11A006520A3 /* Color+Extensions.swift in Sources */,
 				824E4D0E276E7C3F005C0865 /* CepController.swift in Sources */,

@@ -8,7 +8,7 @@
 import CoreData
 import SwiftUI
 
-class ParcelViewModel {
+class ParcelCoreDataViewModel {
     
     
     // MARK: - Properties
@@ -19,7 +19,7 @@ class ParcelViewModel {
     }()
 }
 
-extension ParcelViewModel {
+extension ParcelCoreDataViewModel {
 
 
     // MARK: - Action

@@ -9,6 +9,7 @@ import Foundation
 import Combine
 import Alamofire
 
+
 protocol ParcelServiceProtocol {
     func fetch(code: String) -> AnyPublisher<DataResponse<EventEntity, NetworkErrorEntity>, Never>
 }

@@ -11,22 +11,22 @@ import XCTest
 class ParcelViewModelTests: XCTestCase {
     
     override func setUp() {
-        _ = ParcelViewModel.deleteAll()
+        _ = ParcelCoreDataViewModel.deleteAll()
     }
     
     func test_create() {
-        let create = ParcelViewModel.save(title: "Teste", code: "12312312321")
-        let list = ParcelViewModel.getList()
+        let create = ParcelCoreDataViewModel.save(title: "Teste", code: "12312312321")
+        let list = ParcelCoreDataViewModel.getList()
 
         XCTAssertEqual(create, true)
         XCTAssertEqual(list.isEmpty, false)
     }
     
     func test_delete() {
-        _ = ParcelViewModel.save(title: "Teste", code: "12312312321")
-        let list = ParcelViewModel.getList()
-        _ = ParcelViewModel.delete(list[0])
+        _ = ParcelCoreDataViewModel.save(title: "Teste", code: "12312312321")
+        let list = ParcelCoreDataViewModel.getList()
+        _ = ParcelCoreDataViewModel.delete(list[0])
         
-        XCTAssertEqual(ParcelViewModel.getList().count, 0)
+        XCTAssertEqual(ParcelCoreDataViewModel.getList().count, 0)
     }
 }
