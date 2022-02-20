@@ -10,6 +10,9 @@ import Foundation
 struct EventEntity: Identifiable, Codable {
     let id = UUID()
     var objetos: [EventItemEntity]?
+    var objetoUniq: EventItemEntity? {
+        return objetos?.first
+    }
     var quantidade: Int?
     var resultado: String?
     var versao: String?
@@ -30,6 +33,9 @@ struct EventItemEntity: Identifiable, Codable {
     var habilitaCrowdshipping: Bool?
     var mensagem: String?
     var eventos: [EventEventsEntity]?
+    var tipo: String? {
+        return tipoPostal?.categoria
+    }
     var tipoPostal: EventTypePostalEntity?
 }
 

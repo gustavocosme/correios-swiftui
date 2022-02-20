@@ -36,8 +36,8 @@ struct TextFieldBorder: View {
             }
             .modifier(TextFieldModifier(text: self.$params))
             .keyboardType(self.type)
-            .font(.system(size: 20))
-            .padding()
+            .font(.system(size: 18))
+            .padding(.all, 14)
             .overlay(
                 RoundedRectangle(cornerRadius: 8)
                     .stroke(self.getColor(), lineWidth: 1)

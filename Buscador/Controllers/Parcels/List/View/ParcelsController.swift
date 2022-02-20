@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+                                                                                     
 struct ParcelsController: View {
     
     @State private var isShowCreate = false
@@ -15,16 +15,12 @@ struct ParcelsController: View {
     var body: some View {
         
         NavigationView {
-         
             self.getView()
-            .navigationTitle("Encomendas")
             .toolbar {
                 
                 ToolbarItem(placement: .navigationBarLeading) {
-                    
                     EditButton()
                 }
-                
                 ToolbarItem(placement: .navigationBarTrailing) {
                     
                     Button(action: {
@@ -34,7 +30,9 @@ struct ParcelsController: View {
                     })
                 }
             }
+            .navigationBarTitle("Encomendas", displayMode: .automatic)
         }
+        .navigationViewStyle(.stack)
         .popover(isPresented: $isShowCreate) {
             ParcelsCreateController(showSheet: self.$isShowCreate, parcels: self.$parcels)
         }
@@ -43,7 +41,6 @@ struct ParcelsController: View {
     private func getView() -> AnyView {
         if !self.parcels.isEmpty {
             return AnyView(ParcelsContainer(context: self))
-
         }
         return AnyView(Text("Não há encomendas"))
     }
@@ -54,11 +51,11 @@ private struct ParcelsContainer: View {
     var context: ParcelsController
     
     var body: some View {
-        
         List {
             ForEach(self.context.parcels, id: \.self) { parcel in
-                NavigationLink(destination: ParcelsDetailsController()) {
-                    ParcelsViewCell(parcel: parcel)
+                NavigationLink(destination: ParcelsDetailsController(code: parcel.code ?? "")) {
+                    let parcelCellData = ParcelCellData.make(parcelEntity: parcel)
+                    ParcelsViewCell(parcel: parcelCellData)
                 }
             }
             .onDelete(perform: self.didDelete)
@@ -80,7 +77,6 @@ private struct ParcelsContainer: View {
 struct ParcelsController_Previews: PreviewProvider {
     
     static var previews: some View {
-        
         ParcelsController()
     }
 }

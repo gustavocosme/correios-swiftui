@@ -20,7 +20,7 @@ class ParcelViewModel: ObservableObject {
     private var cancellableSet: Set<AnyCancellable> = []
     private var dataManager: ParcelServiceProtocol
     
-    init( dataManager: ParcelServiceProtocol = ParcelService.shared) {
+    init(dataManager: ParcelServiceProtocol = ParcelService.shared) {
         self.dataManager = dataManager
     }
     
@@ -48,7 +48,7 @@ class ParcelViewModel: ObservableObject {
     }
     
     private func getError(parcel: EventEntity) -> String? {
-        guard let mensagem = parcel.objetos?[0].mensagem else {
+        guard let mensagem = parcel.objetoUniq?.mensagem else {
             return nil
         }
         return mensagem
@@ -59,3 +59,5 @@ class ParcelViewModel: ObservableObject {
         self.error = ""
     }
 }
+
+

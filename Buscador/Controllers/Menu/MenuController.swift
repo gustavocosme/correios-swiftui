@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct MenuController: View {
-    
+
     var body: some View {
         
         TabView {
-            CepController()
-            .tabItem { Label("Cep", systemImage: "house.fill") }
             ParcelsController()
             .tabItem { Label("Encomendas", systemImage: "mail.stack.fill") }
+            CepController()
+            .tabItem { Label("Cep", systemImage: "house.fill") }
             ConfigurationController()
             .tabItem { Label("Configurações", systemImage: "gearshape.fill") }
         }
@@ -26,7 +26,6 @@ struct MenuController: View {
 struct MenuController_Previews: PreviewProvider {
     
     static var previews: some View {
-        
         MenuController()
     }
 }

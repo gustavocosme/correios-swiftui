@@ -37,17 +37,39 @@ struct ParcelsCreateController: View {
             .toolbar {
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    
+                    Button(action: {
+                        self.didCreateParcel()
+                    }, label: {
+                        Text("OK")
+                    }).disabled(self.getButtonIsDisable())
+                }
+                
+                ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: {
                         self.showSheet = false
                     }, label: {
-                        Image(systemName: "multiply.circle.fill")
+                        Text("Cancelar")
                     })
                 }
             }
         }
+    
+    
     }
+    
+    private func didCreateParcel() {
+        if ParcelCoreDataViewModel.save(title: self.title, code: self.code) {
+            self.parcels = ParcelCoreDataViewModel.getList()
+            self.showSheet = false
+        }
+    }
+    
+    private func getButtonIsDisable() -> Bool {
+        return (self.viewModel.parcel == nil) ? true : false
+    }
+    
 }
+
 
 // MARK: - View
 
@@ -62,42 +84,25 @@ struct ParcelsCreateView: View {
             VStack(alignment: .leading) {
                 
                 TextFieldBorder(params: self.context.$title,
-                                title: "Titulo",
-                                hint: "* Informe o titulo",
+                                title: "* Titulo",
+                                hint: "Informe o titulo",
                                 status: .constant(.normal),
                                 message: .constant(""),
                                 type: .namePhonePad,
                                 onChange: self.onChangeTitle)
-                    .padding(.bottom, 8)
+                    .padding(.bottom, -8)
                 
                 TextFieldBorder(params: self.context.$code,
-                                title: "Codigo",
-                                hint: "* AA123456789BR",
+                                title: "* Codigo",
+                                hint: "AA123456789BR",
                                 status: self.context.$codeStatus,
                                 message: self.context.$codeMessage,
                                 limit: 13,
                                 onChange: self.onChangeCode)
-                    .padding(.bottom, 18)
-                
-                HStack {
-                    
-                    Spacer()
-                    Button(action: {
-                        self.didCreateParcel()
-                    }, label: {
-                        Text("Cadastrar")
-                    })
-                        .buttonStyle(ButtonAppStyle())
-                        .disabled(self.getButtonIsDisable())
-                        .opacity(self.getButtonIsDisable() ? 0.5 : 1.0)
-                }
+              
             }
             .padding()
         }
-    }
-    
-    private func getButtonIsDisable() -> Bool {
-        return (self.context.viewModel.parcel == nil) ? true : false
     }
 }
 
@@ -105,14 +110,7 @@ struct ParcelsCreateView: View {
 // MARK: - Actions
 
 extension ParcelsCreateView: ParcelViewModelDelegate {
-    
-    private func didCreateParcel() {
-        if ParcelCoreDataViewModel.save(title: self.context.title, code: self.context.code) {
-            self.context.parcels = ParcelCoreDataViewModel.getList()
-            self.context.showSheet = false
-        }
-    }
-    
+        
     private func onChangeTitle() {
         self.hasValidation()
     }
@@ -147,14 +145,14 @@ extension ParcelsCreateView: ParcelViewModelDelegate {
     
     private func didStatusError() {
         self.context.codeStatus = .error
-        self.context.codeMessage = "Código inválido! :("
+        //self.context.codeMessage = "Código inválido! :("
     }
     
     func didCompletion(_ parcel: EventEntity?) {
        
         if parcel != nil {
             self.context.codeStatus = .sucess
-            self.context.codeMessage = "Ok ;)"
+            //self.context.codeMessage = "Ok ;)"
         } else {
             self.didStatusError()
         }
